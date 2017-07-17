@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue-插值-文本</title>
+        <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 注： 此处容易犯错( "{{  }}" 没有$符号，不要惯性于jQuery )  -->
+            <p>{{ message }}</p>
+        </div>
+
+        <script>
+
+            // 数据绑定最常见的形式就是使用 {{...}}（双大括号）的文本插值：
+            var myApp = new Vue({
+                el: "#app",
+                data: {
+                    message: "Hello Vue.js!"
+                }
+            });
+        </script>
+    </body>
+</html>

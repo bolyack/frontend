@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue-插值-Html元素</title>
+        <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 此处 v-html 后面 等号(=) 容易写成 冒号(:)  -->
+            <div v-html="message"></div>
+        </div>
+
+        <script>
+
+            var myApp = new Vue({
+                el: "#app",
+                data: {
+                    // 使用 v-html 指令用于输出 html 代码：
+                    message: "<h2 align='center' style='color:green'>此处的值通过html元素绑定,可以渲染样式等</h2>"
+                }
+            });
+        </script>
+    </body>
+</html>
