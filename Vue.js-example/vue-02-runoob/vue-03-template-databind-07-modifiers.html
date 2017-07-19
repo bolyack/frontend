@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue-模板-修饰符Modifiers</title>
+        <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+        <style>
+            .divCs {
+                width:200px;
+                height:200px;
+                border:1px solid #bbb
+            }
+            input {
+                margin-left: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="divCs">
+                <form action="/doTask.do" method="post" v-on:submit.prevent="noGo">
+                    <br>
+                    <input type="text" value="请输入用户名" /> <br><br>
+                    <input type="text" value="请输入密码" /> <br><br>
+                    <input type="submit" value="提交" /> <br>
+                </form>
+            </div>
+            <br><br>
+
+            <hr>
+            <label><strong>修饰符</strong>：修饰符是以半角句号 . 指明的特殊后缀，用于指出一个指定应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：</label><br>
+            <div class="divCs">
+                <form >
+                    <br>
+                    <input type="text" value="请输入用户名" /> <br><br>
+                    <input type="text" value="请输入密码" /> <br><br>
+
+                    <!-- 鼠标右键按钮 -->
+                    <input type="submit" value="提交"  @contextmenu="show($event)"/> <br><br>
+
+                    <!-- 如果调用的方法要用到事件元素，则showLabel($event);  阻止了鼠标右键的菜单功能 -->
+                    <label style="margin-left: 12px;" @contextmenu.prevent="showLabel()" >aaa</label>
+                </form>
+            </div>
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+                methods:{
+                    noGo: function() {
+                        alert("000");
+                    },
+                    show:function(ev){
+                        // ev.preventDefault();  //阻止右键菜单事件
+                        alert(2222);
+                    },
+                    showLabel: function(){
+                        alert(333);
+                    }
+                }
+            });
+        
+        </script>
+    </body>
+</html>

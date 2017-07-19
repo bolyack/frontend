@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue-属性-express</title>
+        <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{ 5 + 5}} <br/><br/>
+            {{ ok ? "yes" : "no" }} <br/><br/>
+            {{ message.split("").reverse().join("") }} <br/><br/>
+
+            <!-- v-bind:id中的id只是指明绑定的变量名，实际起作用的是 v-bind:id= 后面引号内的id 与vue变量里的data一致。  -->
+            <div v-bind:id="'list-' + id">菜鸟教程</div>
+        </div>
+        <script>
+            // Vue.js 都提供了完全的 JavaScript 表达式支持。
+            var myApp = new Vue({
+                el: "#app",
+                data: {
+                    ok: true,
+                    message: 'RUNOOB',
+                    id: 123
+                }
+            });
+        </script>
+    </body>
+</html>
